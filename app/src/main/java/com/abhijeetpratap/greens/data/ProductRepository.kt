@@ -18,6 +18,10 @@ class ProductRepository(application: Application) {
         DeleteUser(productDao).execute(product)
     }
 
+    fun updateProduct() {
+
+    }
+
     class InsertUser(private val productDao: ProductDao) : AsyncTask<Product, Unit, Unit>() {
         override fun doInBackground(vararg products: Product?) {
             products[0]?.let { productDao.addProduct(product = it) }
