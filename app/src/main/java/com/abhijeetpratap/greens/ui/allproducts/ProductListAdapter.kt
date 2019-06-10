@@ -10,7 +10,7 @@ import com.abhijeetpratap.greens.data.Product
 import kotlinx.android.synthetic.main.product_list_item.view.*
 
 class ProductListAdapter(private val context: Context) : RecyclerView.Adapter<ProductListAdapter.ProductViewHolder>() {
-    private var newProducts: List<Product>? = null
+    var newProducts: List<Product>? = null
         set(value) {
             field = value
             notifyDataSetChanged()

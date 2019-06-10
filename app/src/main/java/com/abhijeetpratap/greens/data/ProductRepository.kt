@@ -10,11 +10,11 @@ class ProductRepository(application: Application) {
 
     val allProducts: LiveData<List<Product>> = productDao.allProducts
 
-    fun addUser(product: Product) {
+    fun addProduct(product: Product) {
         InsertUser(productDao).execute(product)
     }
 
-    fun deleteUser(product: Product) {
+    fun deleteProduct(product: Product) {
         DeleteUser(productDao).execute(product)
     }
 
