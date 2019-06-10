@@ -1,20 +1,22 @@
 package com.abhijeetpratap.greens
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProviders
+import com.abhijeetpratap.greens.ui.allproducts.ProductsViewModel
 
 class MainActivity : AppCompatActivity() {
-
-    var count  = 0
-
+    private lateinit var productsViewModel: ProductsViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        actionBar?.title = "Products"
+        supportActionBar?.title = "Products"
+
+        productsViewModel = ViewModelProviders.of(this).get(ProductsViewModel::class.java)
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -24,12 +26,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when(item?.itemId){
-            R.id.fav -> {
+            R.id.filter -> {
 
             }
 
             R.id.profile ->{
-                Log.d("PROFILE_TAP", "Profile btn tapped ${count++} times.")
+
             }
         }
         return true

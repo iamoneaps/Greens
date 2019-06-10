@@ -3,4 +3,5 @@
     <string name="sample_product_category">Category</string>
     <string name="sample_product_name">Product Name</string>
     <string name="sample_product_price">\u20B9 123.58</string>
+    <string name="product_filter">Filter</string>
 </resources>
