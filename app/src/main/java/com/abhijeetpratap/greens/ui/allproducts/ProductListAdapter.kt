@@ -7,6 +7,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.abhijeetpratap.greens.R
 import com.abhijeetpratap.greens.data.Product
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.product_list_item.view.*
 
 class ProductListAdapter(private val context: Context) : RecyclerView.Adapter<ProductListAdapter.ProductViewHolder>() {
@@ -25,8 +29,14 @@ class ProductListAdapter(private val context: Context) : RecyclerView.Adapter<Pr
     override fun onBindViewHolder(holder: ProductListAdapter.ProductViewHolder, position: Int) {
         val product = newProducts?.get(position) ?: Product()
 
-//        Glide.with(context).load(cItem.photoUrl).into(holder.image)
+        Glide.with(context)
+            .load("https://us.123rf.com/450wm/cobalt/cobalt1508/cobalt150800043/44225996-stock-vector-sunflower-isolated-vector-illustration-.jpg?ver=6")
+            .apply(RequestOptions().transform(CenterCrop(), RoundedCorners(16)))
+            .into(holder.productImage)
+
         holder.productName.text = product.name
+        holder.productCategory.text = product.category.name
+        holder.productPrice.text = "${product.price}"
     }
 
     inner class ProductViewHolder(view: View) : RecyclerView.ViewHolder(view) {

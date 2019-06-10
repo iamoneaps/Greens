@@ -5,7 +5,7 @@ import android.os.AsyncTask
 import androidx.lifecycle.LiveData
 
 class ProductRepository(application: Application) {
-    private val database: ProductDatabase = ProductDatabase.getInstance(application)
+    private val database: ProductDatabase = ProductDatabase.getDatabase(application)
     private val productDao: ProductDao = database.productDao()
 
     val allProducts: LiveData<List<Product>> = productDao.allProducts

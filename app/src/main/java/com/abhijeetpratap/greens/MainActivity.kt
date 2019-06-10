@@ -43,6 +43,14 @@ class MainActivity : AppCompatActivity() {
             )
         )
 
+        productsViewModel.productRepository.addProduct(
+            Product(
+                name = "Sunflower",
+                category = Category.FLOWERS,
+                price = 123.54
+            )
+        )
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
